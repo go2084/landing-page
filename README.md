@@ -10,3 +10,7 @@ Its purpose is to keep anyone interested in the game updated on the state of dev
 
 - Update the feature list by editing features.json
 - Update the progress bar (and all other percentages) by editing completionPercentage.json
+
+### Technologies
+
+This is a simple Vite project in plain HTML + tailwind CSS + vanilla JavaScript.

@@ -1,0 +1,201 @@
+<!doctype html>
+<html lang="it">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Waiting for Golpe 2084</title>
+
+    <!-- Favicon -->
+    <link
+      rel="icon"
+      type="image/png"
+      href="/favicon/favicon-96x96.png"
+      sizes="96x96"
+    />
+    <link rel="icon" type="image/svg+xml" href="/favicon/favicon.svg" />
+    <link rel="shortcut icon" href="/favicon/favicon.ico" />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="/favicon/apple-touch-icon.png"
+    />
+    <link rel="manifest" href="/favicon/site.webmanifest" />
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="src/style.css" />
+
+    <!-- JS -->
+    <script type="module" src="src/addPercentage.js" defer></script>
+    <script type="module" src="src/addFeatures.js" defer></script>
+  </head>
+
+  <body
+    class="flex min-h-dvh flex-col items-center justify-center bg-gray-900 text-center text-white"
+  >
+    <header class="mt-24 max-sm:mt-8">
+      <h1
+        class="decoration-secondary text-main mb-4 text-9xl underline max-sm:mb-2 max-sm:text-6xl"
+      >
+        Golpe 2084
+      </h1>
+      <q class="text-3xl italic before:content-[''] max-sm:text-2xl"
+        >Sei pronto per il 2084?</q
+      >
+    </header>
+
+    <h2 class="mt-12 text-4xl max-sm:text-3xl">
+      Prossimo obiettivo:
+      <span class="text-main italic max-sm:block"
+        >demo <code>(v0.1.0)</code></span
+      >
+    </h2>
+
+    <h3 class="mt-6 text-3xl max-sm:text-2xl">
+      Data stimata di rilascio:
+      <time class="text-main max-sm:block" datetime="2026-03">Q1 2026</time>
+    </h3>
+
+    <label class="mt-4 text-3xl max-sm:text-2xl" for="progress-bar"
+      >Percentuale di completamento:
+      <span id="completion-percentage" class="text-main max-sm:block"
+        >0%</span
+      ></label
+    >
+
+    <!-- ----------------------------------------------------------------- -->
+
+    <!-- Progress bar -->
+    <div
+      class="shadow-secondary relative my-12 flex h-12 w-4/5 max-w-2xl overflow-clip rounded-full shadow-[10px_10px_5px]"
+    >
+      <!-- Completed portion -->
+      <div id="completed-bar" class="bg-main relative h-full w-15/100">
+        <!-- Animated shimmer -->
+        <div
+          class="animate-progress absolute h-full w-[200%] bg-linear-to-r from-transparent via-slate-400 to-transparent opacity-50"
+        ></div>
+      </div>
+      <!-- Remaining portion -->
+      <div class="bg-inactive relative z-1 h-full grow"></div>
+      <!-- Percentage text -->
+      <span
+        id="percentage-text-in-progress-bar"
+        class="absolute inset-0 z-1 grid animate-pulse place-items-center text-lg font-bold"
+      >
+        bruh
+      </span>
+    </div>
+
+    <!-- ----------------------------------------------------------------- -->
+
+    <!-- Feature List with Roadmap -->
+    <h2 id="roadmap" class="mt-12 mb-8 text-3xl">Roadmap</h2>
+
+    <!-- Feature List -->
+    <ul id="feature-list" class="mb-8 w-4/5 max-w-sm text-left text-xl">
+      <!-- Main template for features -->
+      <template id="feature-template">
+        <li
+          class="group hover:bg-main active:bg-main flex items-center rounded-lg px-8 transition-all duration-500 hover:scale-110"
+        >
+          <!-- Feature name -->
+          <p id="feature-name" class="grow text-2xl">feature</p>
+          <!-- Node-line container -->
+          <div
+            id="feature-node-line-container"
+            class="flex w-1/5 flex-col items-center"
+          >
+            <!-- Sub-template (depends on feature status) is inserted here -->
+          </div>
+        </li>
+      </template>
+    </ul>
+
+    <!-- Sub-templates for specific feature statuses -->
+
+    <!-- Sub-template for "completed" features -->
+    <template id="completed-feature-node-template">
+      <!-- Upper line -->
+      <div class="bg-main -mb-2 h-5 w-3" data-role="upper-line"></div>
+      <!-- Node -->
+      <div class="bg-main grid h-18 w-18 place-items-center rounded-full">
+        <span
+          id="feature-status-emoji"
+          class="text-4xl hue-rotate-90 duration-500 group-hover:scale-150"
+        >
+          ✅
+        </span>
+      </div>
+      <!-- Lower line -->
+      <div class="bg-main -mt-2 h-5 w-3" data-role="lower-line"></div>
+    </template>
+
+    <!-- Sub-template for "working" features -->
+    <template id="working-feature-node-template">
+      <!-- Upper line -->
+      <div class="bg-main -mb-2 h-5 w-3" data-role="upper-line"></div>
+      <!-- Node -->
+      <div
+        class="bg-main animate-heartbeat grid h-18 w-18 place-items-center rounded-full"
+      >
+        <span
+          id="feature-status-emoji"
+          class="text-4xl duration-500 group-hover:scale-150"
+        >
+          🏗️
+        </span>
+      </div>
+      <!-- Lower line -->
+      <div class="bg-main -mt-2 h-5 w-3" data-role="lower-line"></div>
+    </template>
+
+    <!-- Sub-template for "future" features -->
+    <template id="future-feature-node-template">
+      <!-- Upper line -->
+      <div class="bg-inactive -mb-2 h-5 w-3" data-role="upper-line"></div>
+      <!-- Node -->
+      <div class="bg-inactive grid h-18 w-18 place-items-center rounded-full">
+        <span
+          id="feature-status-emoji"
+          class="text-4xl sepia-50 duration-500 group-hover:scale-150"
+        >
+          🚧
+        </span>
+      </div>
+      <!-- Lower line -->
+      <div class="bg-inactive -mt-2 h-5 w-3" data-role="lower-line"></div>
+    </template>
+
+    <!-- Footer -->
+    <hr class="border-secondary mt-16 mb-8 h-1 w-4/5 border-2" />
+
+    <footer
+      class="mb-16 flex w-4/5 max-w-2xl justify-between max-sm:grid max-sm:grid-cols-2 max-sm:gap-y-8"
+    >
+      <div
+        class="decoration-secondary text-main hover:text-secondary text-3xl underline max-sm:text-xl"
+      >
+        <a href="https://golpewiki.vercel.app"
+          >Preparati <br />
+          leggendo la wiki!</a
+        >
+      </div>
+
+      <div
+        class="decoration-secondary text-main hover:text-secondary text-3xl underline max-sm:text-xl"
+      >
+        <a href="/version-plan/"
+          >Piano delle <br />
+          versioni</a
+        >
+      </div>
+
+      <div
+        class="decoration-inactive text-inactive hover:text-inactive cursor-not-allowed text-3xl underline max-sm:text-xl"
+      >
+        <p>Codice Sorgente</p>
+        <p>(coming soon...)</p>
+      </div>
+    </footer>
+  </body>
+</html>

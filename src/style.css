@@ -1,0 +1,33 @@
+@import "tailwindcss";
+
+@keyframes progress {
+  0% {
+    left: -200%;
+  }
+  60% {
+    left: 100%;
+  }
+  100% {
+    left: 100%;
+  }
+}
+
+.animate-progress {
+  animation: progress 3s infinite linear;
+}
+
+@keyframes heartbeat {
+  30% {
+    transform: scale(110%);
+  }
+}
+
+.animate-heartbeat {
+  animation: heartbeat 1s infinite;
+}
+
+@theme {
+  --color-main: var(--color-sky-600);
+  --color-secondary: var(--color-amber-500);
+  --color-inactive: var(--color-slate-600);
+}

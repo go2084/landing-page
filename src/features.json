@@ -1,0 +1,56 @@
+{
+  "features": [
+    {
+      "name": "cittadini",
+      "status": "completed"
+    },
+    {
+      "name": "team",
+      "status": "completed"
+    },
+    {
+      "name": "armi",
+      "status": "working"
+    },
+    {
+      "name": "munizioni",
+      "status": "future"
+    },
+    {
+      "name": "oggetti",
+      "status": "future"
+    },
+    {
+      "name": "zaino",
+      "status": "future"
+    },
+    {
+      "name": "registrazione",
+      "status": "future"
+    },
+    {
+      "name": "attacco",
+      "status": "future"
+    },
+    {
+      "name": "spionaggio",
+      "status": "future"
+    },
+    {
+      "name": "resurrezione",
+      "status": "future"
+    },
+    {
+      "name": "cura",
+      "status": "future"
+    },
+    {
+      "name": "chat globale",
+      "status": "future"
+    },
+    {
+      "name": "golpe",
+      "status": "future"
+    }
+  ]
+}

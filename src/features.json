@@ -10,22 +10,18 @@
     },
     {
       "name": "armi",
-      "status": "working"
+      "status": "completed"
     },
     {
       "name": "munizioni",
-      "status": "future"
+      "status": "completed"
     },
     {
       "name": "oggetti",
-      "status": "future"
+      "status": "working"
     },
     {
       "name": "zaino",
-      "status": "future"
-    },
-    {
-      "name": "registrazione",
       "status": "future"
     },
     {
@@ -42,6 +38,10 @@
     },
     {
       "name": "cura",
+      "status": "future"
+    },
+    {
+      "name": "registrazione",
       "status": "future"
     },
     {

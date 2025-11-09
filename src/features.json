@@ -22,6 +22,10 @@
     },
     {
       "name": "zaino",
+      "status": "completed"
+    },
+    {
+      "name": "doping",
       "status": "working"
     },
     {

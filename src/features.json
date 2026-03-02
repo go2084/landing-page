@@ -29,20 +29,20 @@
       "status": "completed"
     },
     {
-      "name": "attacco",
-      "status": "working"
-    },
-    {
-      "name": "spionaggio",
-      "status": "future"
-    },
-    {
       "name": "resurrezione",
-      "status": "future"
+      "status": "completed"
+    },
+    {
+      "name": "attacco",
+      "status": "completed"
     },
     {
       "name": "cura",
-      "status": "future"
+      "status": "completed"
+    },
+    {
+      "name": "spionaggio",
+      "status": "working"
     },
     {
       "name": "registrazione",

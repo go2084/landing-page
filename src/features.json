@@ -42,11 +42,11 @@
     },
     {
       "name": "spionaggio",
-      "status": "working"
+      "status": "completed"
     },
     {
       "name": "registrazione",
-      "status": "future"
+      "status": "working"
     },
     {
       "name": "chat globale",

@@ -46,14 +46,14 @@
     },
     {
       "name": "registrazione",
+      "status": "completed"
+    },
+    {
+      "name": "golpe",
       "status": "working"
     },
     {
       "name": "chat globale",
-      "status": "future"
-    },
-    {
-      "name": "golpe",
       "status": "future"
     }
   ]

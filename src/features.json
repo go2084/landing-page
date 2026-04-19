@@ -50,11 +50,11 @@
     },
     {
       "name": "golpe",
-      "status": "working"
+      "status": "completed"
     },
     {
       "name": "chat globale",
-      "status": "future"
+      "status": "working"
     }
   ]
 }
